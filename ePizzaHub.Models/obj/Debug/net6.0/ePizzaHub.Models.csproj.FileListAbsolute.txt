@@ -1,0 +1,12 @@
+C:\Users\b2160\Muskan\Net Core Projects\ePizzzaHub\ePizzaHub.Models\bin\Debug\net6.0\ePizzaHub.Models.deps.json
+C:\Users\b2160\Muskan\Net Core Projects\ePizzzaHub\ePizzaHub.Models\bin\Debug\net6.0\ePizzaHub.Models.dll
+C:\Users\b2160\Muskan\Net Core Projects\ePizzzaHub\ePizzaHub.Models\bin\Debug\net6.0\ePizzaHub.Models.pdb
+C:\Users\b2160\Muskan\Net Core Projects\ePizzzaHub\ePizzaHub.Models\obj\Debug\net6.0\ePizzaHub.Models.csproj.AssemblyReference.cache
+C:\Users\b2160\Muskan\Net Core Projects\ePizzzaHub\ePizzaHub.Models\obj\Debug\net6.0\ePizzaHub.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\b2160\Muskan\Net Core Projects\ePizzzaHub\ePizzaHub.Models\obj\Debug\net6.0\ePizzaHub.Models.AssemblyInfoInputs.cache
+C:\Users\b2160\Muskan\Net Core Projects\ePizzzaHub\ePizzaHub.Models\obj\Debug\net6.0\ePizzaHub.Models.AssemblyInfo.cs
+C:\Users\b2160\Muskan\Net Core Projects\ePizzzaHub\ePizzaHub.Models\obj\Debug\net6.0\ePizzaHub.Models.csproj.CoreCompileInputs.cache
+C:\Users\b2160\Muskan\Net Core Projects\ePizzzaHub\ePizzaHub.Models\obj\Debug\net6.0\ePizzaHub.Models.dll
+C:\Users\b2160\Muskan\Net Core Projects\ePizzzaHub\ePizzaHub.Models\obj\Debug\net6.0\refint\ePizzaHub.Models.dll
+C:\Users\b2160\Muskan\Net Core Projects\ePizzzaHub\ePizzaHub.Models\obj\Debug\net6.0\ePizzaHub.Models.pdb
+C:\Users\b2160\Muskan\Net Core Projects\ePizzzaHub\ePizzaHub.Models\obj\Debug\net6.0\ref\ePizzaHub.Models.dll
