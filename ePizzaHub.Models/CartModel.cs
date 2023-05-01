@@ -8,7 +8,7 @@ namespace ePizzaHub.Models
 {
     public class CartModel
     {
-        public Cart()
+        public CartModel()
         {
             Items = new List<ItemModel>();
         }
