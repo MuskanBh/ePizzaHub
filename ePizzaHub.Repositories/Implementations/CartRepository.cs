@@ -11,22 +11,20 @@ using System.Threading.Tasks;
 
 namespace ePizzaHub.Repositories.Implementations
 {
-    public class CartRepository : Repository<CartRepository>, ICartRepository
+    public class CartRepository : Repository<Cart>, ICartRepository
     {
-        AppDbContext context { get { return _db as AppDbContext; } }
+        AppDbContext context
+        {
+            get { return _db as AppDbContext; }
+        }
         public CartRepository(AppDbContext db) : base(db)
         {
 
         }
-        public void Add(Cart entity)
-        {
-            throw new NotImplementedException();
-        }
-
         public int DeleteItem(Guid cartId, int itemId)
         {
             var item = context.CartItems.Where(ci => ci.CartId == cartId && ci.Id == itemId).FirstOrDefault();
-            if(item != null)
+            if (item != null)
             {
                 context.CartItems.Remove(item);
                 return context.SaveChanges();
@@ -37,16 +35,15 @@ namespace ePizzaHub.Repositories.Implementations
             }
         }
 
-        public Cart GetCart(Guid cartId)
+        public Cart GetCart(Guid CartId)
         {
-            return context.Carts.Include(c => c.CartItems).Where(p => p.Id == cartId && p.IsActive == true).FirstOrDefault();
+            return context.Carts.Include(c => c.CartItems).Where(p => p.Id == CartId && p.IsActive == true).FirstOrDefault();
         }
 
-        public CartModel GetCartDetails(Guid cartId)
+        public CartModel GetCartDetails(Guid CartId)
         {
             var model = (from cart in context.Carts
-                         where
-                         cart.Id == cartId && cart.IsActive == true
+                         where cart.Id == CartId && cart.IsActive == true
                          select new CartModel
                          {
                              Id = cart.Id,
@@ -55,7 +52,7 @@ namespace ePizzaHub.Repositories.Implementations
                              Items = (from cartItem in context.CartItems
                                       join item in context.Items
                                       on cartItem.ItemId equals item.Id
-                                      where cartItem.CartId == cartId
+                                      where cartItem.CartId == CartId
                                       select new ItemModel
                                       {
                                           Id = cartItem.Id,
@@ -70,16 +67,6 @@ namespace ePizzaHub.Repositories.Implementations
             return model;
         }
 
-        public void Remove(Cart entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Update(Cart entity)
-        {
-            throw new NotImplementedException();
-        }
-
         public int UpdateCart(Guid cartId, int userId)
         {
             Cart cart = GetCart(cartId);
@@ -91,35 +78,25 @@ namespace ePizzaHub.Repositories.Implementations
         {
             bool flag = false;
             var cart = GetCart(cartId);
-            if(cart !=null)
+            if (cart != null)
             {
                 var cartItems = cart.CartItems.ToList();
-                for(int i=0; i< cart.CartItems.Count; i++)
+                for (int i = 0; i < cartItems.Count; i++)
                 {
-                    if (cartItems[i].Id = itemId)
+                    if (cartItems[i].Id == itemId)
                     {
-                        flag= true;
-                        cartItems[i].Quantity += Quantity;
+                        flag = true;
+                        cartItems[i].Quantity += (Quantity);
                         break;
                     }
                 }
                 if (flag)
                 {
-                    cart.CartItems= cartItems;
+                    cart.CartItems = cartItems;
                     return context.SaveChanges();
                 }
             }
             return 0;
-        }
-
-        Cart IRepository<Cart>.Find(object id)
-        {
-            throw new NotImplementedException();
-        }
-
-        IEnumerable<Cart> IRepository<Cart>.GetAll()
-        {
-            throw new NotImplementedException();
         }
     }
 }

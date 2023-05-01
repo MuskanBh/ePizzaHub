@@ -19,6 +19,11 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Cart" asp-action="Index">
+                           <span class="noti_Counter">0</span> <i class="bi bi-cart2"></i>
+                        </a>
+                    </li>
                     @if (CurrentUser != null)
                     {
                         <li class="nav-item">

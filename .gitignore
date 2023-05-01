@@ -399,3 +399,5 @@ FodyWeavers.xsd
 .vs/ePizzaHub/FileContentIndex/4233b537-a8f7-4d8c-9223-89ec36057743.vsidx
 .vs/ePizzaHub/FileContentIndex/5bfae5b1-5edb-4333-acf3-455ba5aad604.vsidx
 *.vsidx
+*.dll
+*.dll

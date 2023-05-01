@@ -36,10 +36,19 @@
   <div class="card-body">
     <h5 class="card-title">@item.Name</h5>
     <p class="card-text">@item.Description</p>
-    <a href="#" class="btn btn-primary">Add To Cart</a>
+    <a href="javascript:void(0)" onclick="AddToCart('@item.Id', '@item.Name','@item.UnitPrice',1)" class="btn btn-primary">Add To Cart</a>
   </div>
 </div>
             </div>
         }
     </div>
         </div>
+
+<div class="toast" id="toastCart">
+    <div class="toast-header">
+        <strong class="mr-auto">Notification</strong>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+        </button>
+    </div>
+    <div class="toast-body"></div>
+</div>

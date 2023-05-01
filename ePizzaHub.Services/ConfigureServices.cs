@@ -24,16 +24,26 @@ namespace ePizzaHub.Services
             //repositories
             services.AddScoped<IRepository<User>, Repository<User>>();
             services.AddScoped<IRepository<Item>, Repository<Item>>();
+            services.AddScoped<IRepository<Cart>, Repository<Cart>>();
+            services.AddScoped<IRepository<CartItem>, Repository<CartItem>>();
 
 
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ICartRepository, CartRepository>();
+
 
             //services
             services.AddScoped<IService<User>, Service<User>>();
             services.AddScoped<IService<Item>, Service<Item>>();
+            services.AddScoped<IService<Cart>, Service<Cart>>();
+            services.AddScoped<IService<CartItem>, Service<CartItem>>();
+
+
             services.AddScoped<IAuthService, AuthService>();
 
             services.AddScoped<IItemService, ItemService>();
+            services.AddScoped<ICartService, CartService>();
+
 
         }
     }

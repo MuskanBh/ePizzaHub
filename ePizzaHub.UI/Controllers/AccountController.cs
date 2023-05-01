@@ -24,7 +24,7 @@ namespace ePizzaHub.UI.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(LoginViewModel model)
+        public IActionResult Login(LoginViewModel model, string returnUrl)
         {
             if (ModelState.IsValid)
             {
@@ -32,7 +32,11 @@ namespace ePizzaHub.UI.Controllers
                 if (user != null)
                 {
                     GenerateToken(user);
-                    if (user.Roles.Contains("User"))
+                    if (!string.IsNullOrEmpty(returnUrl))
+                    {
+                        return Redirect(returnUrl);
+                    }
+                    else if (user.Roles.Contains("User"))
                     {
                         return RedirectToAction("Index", "Dashboard", new { area = "User" });
                     }
